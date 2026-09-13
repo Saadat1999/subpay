@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01
+      author: msea
+      changes:
+        - sql:
+            sql: CREATE SCHEMA IF NOT EXISTS subpay_customers
+        - createSequence:
+            schemaName: subpay_customers
+            sequenceName: CUSTOMER_SEQ
+            startValue: 1
+            incrementBy: 1
+
+  - changeSet:
+      id: 02
+      author: msea
+      changes:
+        - createTable:
+            schemaName: subpay_customers
+            tableName: customers
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  defaultValueSequenceNext: CUSTOMER_SEQ
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: tenant_id
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: billing_address
+                  type: TEXT
+              - column:
+                  name: payment_method
+                  type: TEXT
+              - column:
+                  name: metadata
+                  type: JSONB
+              - column:
+                  name: created_at
+                  type: DATE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATE
+                  constraints:
+                    nullable: false

@@ -1,0 +1,3 @@
+rootProject.name = 'subpay'
+
+include("customer-ms")

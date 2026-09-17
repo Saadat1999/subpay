@@ -22,7 +22,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
-    @SequenceGenerator(name = "customer_seq", sequenceName = "CUSTOMER_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "customer_seq", sequenceName = "customer_seq", schema = "subpay_customers", allocationSize = 1)
     private Long id;
     @Column(nullable = false)
     private String tenant_id;

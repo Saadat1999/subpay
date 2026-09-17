@@ -22,7 +22,6 @@ databaseChangeLog:
               - column:
                   name: ID
                   type: BIGINT
-                  defaultValueSequenceNext: CUSTOMER_SEQ
                   constraints:
                     nullable: false
                     primaryKey: true

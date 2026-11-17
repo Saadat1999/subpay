@@ -6,6 +6,8 @@ import com.flix.customerms.service.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.processing.Generated;
+
 @RestController
 @RequestMapping("/app/customer")
 public class CustomerController {
@@ -24,5 +26,10 @@ public class CustomerController {
     @GetMapping("/user")
     public ResponseEntity<CustomerResponseDto> getCustomer(@RequestHeader("X-Customer-Id") Long id) {
         return ResponseEntity.ok(customerService.getCustomer(id));
+    }
+
+    @GetMapping("/health")
+    public String health() {
+        return "Healthy";
     }
 }

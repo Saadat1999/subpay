@@ -38,6 +38,9 @@ public class CustomerController {
         return "Welcome to SubPay";
     }
 
+    @GetMapping("welcome")
+    public String welcome() {
+        return "welcome";
     @GetMapping("/bye")
     public String bye() {
         return "bye";

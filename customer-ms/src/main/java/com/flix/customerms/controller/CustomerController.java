@@ -41,6 +41,7 @@ public class CustomerController {
     @GetMapping("welcome")
     public String welcome() {
         return "welcome";
+    }
     @GetMapping("/bye")
     public String bye() {
         return "bye";

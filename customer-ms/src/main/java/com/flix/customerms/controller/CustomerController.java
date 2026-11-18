@@ -32,4 +32,9 @@ public class CustomerController {
     public String health() {
         return "Healthy";
     }
+
+    @GetMapping("/home")
+    public String home() {
+        return "Welcome to SubPay";
+    }
 }
